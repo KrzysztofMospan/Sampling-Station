@@ -27,31 +27,26 @@ namespace Sampling_Station
             separator = separator_local;
         }
 
-        private bool Slice_Mask(string input_nsmask)
+        public void Slice_Mask(string input_nsmask)
         {
             input_smask = input_nsmask.Split(separator);
-
-            if (input_smask.Length % 2 == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
-        private List<double[]> Slice_Input(string input)
+        public string[] getSlicedMask()
         {
-            List<double[]> output = new List<double[]>();
-            double[] temp = new double[2];
-            string[] input_sliced = input.Split(separator);
-            for (int n = 0; n < input_sliced.Length; n += 2)
+            return input_smask;
+        }
+
+        public List<double> Slice_Input(string input)
+        {
+            List<double> output = new List<double>();
+            string[] sliced_input = input.Split(separator);
+            double temp = new double();
+            foreach (string slice in sliced_input)
             {
                 try
                 {
-                    temp[0] = Double.Parse(input_sliced[n]);
-                    temp[1] = Double.Parse(input_sliced[n + 1]);
+                    temp = Double.Parse(slice);
                 }
                 catch (Exception e)
                 {
@@ -60,11 +55,6 @@ namespace Sampling_Station
                 output.Add(temp);
             }
             return output;
-        }
-
-        private Dictionary<string, double[]> Interpret()
-        {
-            return null;
         }
     }
 }

@@ -17,8 +17,31 @@ namespace Sampling_Station
         {
             InitializeComponent();
         }
+        public void configured(bool state)
+        {
+            if (state)
+            {
+                button1.Enabled = true;
+                button2.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cOMToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

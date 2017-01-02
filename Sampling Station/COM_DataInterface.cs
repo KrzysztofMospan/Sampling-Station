@@ -16,12 +16,28 @@ namespace Sampling_Station
 
         public COM_DataInterface()
         {
-            packet_numer = 0;
+            packet_numer = 1;
+            sp.DataReceived += new SerialDataReceivedEventHandler(DataRXHandler);
         }
 
         ~COM_DataInterface()
         {
+            if (sp.IsOpen) try
+                {
+                    sp.Close();
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.ToString(), "Serial port in COM_DataInterface destructor error!");
+                }
+        }
 
+        private void DataRXHandler(
+                    object sender,
+                    SerialDataReceivedEventArgs e)
+        {
+
+            packet_numer++;
         }
 
         public void SerialSetUp(int baud_rate, string port_name, Parity parity, StopBits stopbits, bool rts, bool dtr, int time_out)
