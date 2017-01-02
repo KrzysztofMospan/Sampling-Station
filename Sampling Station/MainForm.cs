@@ -11,9 +11,9 @@ using System.IO.Ports;
 
 namespace Sampling_Station
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -21,13 +21,13 @@ namespace Sampling_Station
         {
             if (state)
             {
-                button1.Enabled = true;
-                button2.Enabled = true;
+                DataTransferStartButton.Enabled = true;
+                DataTransferStopButton.Enabled = true;
             }
             else
             {
-                button1.Enabled = false;
-                button2.Enabled = false;
+                DataTransferStartButton.Enabled = false;
+                DataTransferStopButton.Enabled = false;
             }
         }
 

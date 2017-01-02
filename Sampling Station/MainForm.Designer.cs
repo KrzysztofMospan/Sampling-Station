@@ -1,6 +1,6 @@
 ﻿namespace Sampling_Station
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,13 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.DataTransferStopButton = new System.Windows.Forms.Button();
+            this.DataTransferStartButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openConfigurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.screenshotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,13 +44,9 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -72,6 +72,36 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 294);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.DataTransferStopButton);
+            this.panel1.Controls.Add(this.DataTransferStartButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(88, 294);
+            this.panel1.TabIndex = 1;
+            // 
+            // DataTransferStopButton
+            // 
+            this.DataTransferStopButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DataTransferStopButton.Location = new System.Drawing.Point(0, 23);
+            this.DataTransferStopButton.Name = "DataTransferStopButton";
+            this.DataTransferStopButton.Size = new System.Drawing.Size(88, 23);
+            this.DataTransferStopButton.TabIndex = 1;
+            this.DataTransferStopButton.Text = "Stop";
+            this.DataTransferStopButton.UseVisualStyleBackColor = true;
+            // 
+            // DataTransferStartButton
+            // 
+            this.DataTransferStartButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DataTransferStartButton.Location = new System.Drawing.Point(0, 0);
+            this.DataTransferStartButton.Name = "DataTransferStartButton";
+            this.DataTransferStartButton.Size = new System.Drawing.Size(88, 23);
+            this.DataTransferStartButton.TabIndex = 0;
+            this.DataTransferStartButton.Text = "Start";
+            this.DataTransferStartButton.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -104,6 +134,13 @@
             this.newConfigurationToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.newConfigurationToolStripMenuItem.Text = "New configuration";
             // 
+            // cOMToolStripMenuItem
+            // 
+            this.cOMToolStripMenuItem.Name = "cOMToolStripMenuItem";
+            this.cOMToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.cOMToolStripMenuItem.Text = "COM";
+            this.cOMToolStripMenuItem.Click += new System.EventHandler(this.cOMToolStripMenuItem_Click);
+            // 
             // openConfigurationToolStripMenuItem
             // 
             this.openConfigurationToolStripMenuItem.Name = "openConfigurationToolStripMenuItem";
@@ -122,13 +159,13 @@
             // screenshotToolStripMenuItem
             // 
             this.screenshotToolStripMenuItem.Name = "screenshotToolStripMenuItem";
-            this.screenshotToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.screenshotToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.screenshotToolStripMenuItem.Text = "Screenshot";
             // 
             // cSVToolStripMenuItem
             // 
             this.cSVToolStripMenuItem.Name = "cSVToolStripMenuItem";
-            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cSVToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.cSVToolStripMenuItem.Text = "CSV";
             // 
             // exitToolStripMenuItem
@@ -149,44 +186,7 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // cOMToolStripMenuItem
-            // 
-            this.cOMToolStripMenuItem.Name = "cOMToolStripMenuItem";
-            this.cOMToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cOMToolStripMenuItem.Text = "COM";
-            this.cOMToolStripMenuItem.Click += new System.EventHandler(this.cOMToolStripMenuItem_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(88, 294);
-            this.panel1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Stop";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,13 +194,13 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Sampling Station";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,8 +222,8 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cOMToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DataTransferStopButton;
+        private System.Windows.Forms.Button DataTransferStartButton;
     }
 }
 
