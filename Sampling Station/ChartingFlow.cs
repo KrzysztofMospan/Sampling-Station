@@ -55,5 +55,13 @@ namespace Sampling_Station
                 charts.Add(title, chart);
             }
         }
+
+        public void UpdateCharts(int packet_number, Dictionary<string, double> values)
+        {
+            foreach(Chart chart in charts.Values)
+            {
+                chart.Series.First().Points.AddXY(packet_number, values[chart.Titles.First().ToString()]);
+            }
+        }
     }
 }

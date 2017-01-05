@@ -11,12 +11,14 @@ namespace Sampling_Station
     class COM_DataInterface : DataProcessing
     {
         private SerialPort sp = new SerialPort();
+        private ChartingFlow cf;
 
-        private int packet_numer;
+        private int packet_number;
 
-        public COM_DataInterface()
+        public COM_DataInterface(ChartingFlow chartingflow)
         {
-            packet_numer = 1;
+            packet_number = 1;
+            cf = chartingflow;
             sp.DataReceived += new SerialDataReceivedEventHandler(DataRXHandler);
         }
 
@@ -36,8 +38,10 @@ namespace Sampling_Station
                     object sender,
                     SerialDataReceivedEventArgs e)
         {
-
-            packet_numer++;
+            SerialPort sp_local = (SerialPort)sender;
+            string input = sp_local.ReadLine();
+            cf.UpdateCharts(packet_number,GroupToUpdate(Slice_Input(input)));
+            packet_number++;
         }
 
         public void SerialSetUp(int baud_rate, string port_name, Parity parity, StopBits stopbits, bool rts, bool dtr, int time_out)
@@ -74,6 +78,5 @@ namespace Sampling_Station
                 MessageBox.Show(e.ToString(), "Serial port close operation error!");
             }
         }
-
     }
 }

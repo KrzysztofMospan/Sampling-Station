@@ -56,5 +56,16 @@ namespace Sampling_Station
             }
             return output;
         }
+
+        public Dictionary<string, double> GroupToUpdate(List<double> value)
+        {
+            Dictionary<string, double> output = new Dictionary<string, double>();
+            foreach(string title in input_smask)
+            {
+                output[title] = value[0];
+                value.RemoveAt(0);
+            }
+            return output;
+        }
     }
 }
