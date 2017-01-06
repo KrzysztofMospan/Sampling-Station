@@ -27,13 +27,13 @@ namespace Sampling_Station
             {
                 DataTransferStartButton.Enabled = true;
                 //DataTransferStopButton.Enabled = true;
-                ChangeChartsSizeButton.Enabled = true;
+                //ChangeChartsSizeButton.Enabled = true;
             }
             else
             {
                 DataTransferStartButton.Enabled = false;
                 //DataTransferStopButton.Enabled = false;
-                ChangeChartsSizeButton.Enabled = false;
+                //ChangeChartsSizeButton.Enabled = false;
             }
         }
 
