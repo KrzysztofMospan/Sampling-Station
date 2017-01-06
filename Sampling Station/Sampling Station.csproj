@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChartingFlow.cs" />
+    <Compile Include="COMSettingsWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COMSettingsWindows.Designer.cs">
+      <DependentUpon>COMSettingsWindows.cs</DependentUpon>
+    </Compile>
     <Compile Include="COM_DataInterface.cs" />
     <Compile Include="DataProcessing.cs" />
     <Compile Include="MainForm.cs">
@@ -58,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="COMSettingsWindows.resx">
+      <DependentUpon>COMSettingsWindows.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

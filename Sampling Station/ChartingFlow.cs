@@ -8,7 +8,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Sampling_Station
 {
-    class ChartingFlow
+    public class ChartingFlow
     {
         FlowLayoutPanel panel;
         Dictionary<string, Chart> charts = new Dictionary<string, Chart>();

@@ -17,6 +17,9 @@ namespace Sampling_Station
         {
             InitializeComponent();
         }
+
+        //ChartingFlow chartingflow = new ChartingFlow(ChartsPanel);
+
         public void configured(bool state)
         {
             if (state)
@@ -42,6 +45,16 @@ namespace Sampling_Station
         }
 
         private void cOMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataTransferStartButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

@@ -8,7 +8,7 @@ using System.IO.Ports;
 
 namespace Sampling_Station
 {
-    class COM_DataInterface : DataProcessing
+    public class COM_DataInterface : DataProcessing
     {
         private SerialPort sp = new SerialPort();
         private ChartingFlow cf;
@@ -28,7 +28,7 @@ namespace Sampling_Station
                 {
                     sp.Close();
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     MessageBox.Show(e.ToString(), "Serial port in COM_DataInterface destructor error!");
                 }
@@ -40,7 +40,7 @@ namespace Sampling_Station
         {
             SerialPort sp_local = (SerialPort)sender;
             string input = sp_local.ReadLine();
-            cf.UpdateCharts(packet_number,GroupToUpdate(Slice_Input(input)));
+            cf.UpdateCharts(packet_number, GroupToUpdate(Slice_Input(input)));
             packet_number++;
         }
 

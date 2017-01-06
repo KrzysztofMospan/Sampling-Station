@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ChartsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.ControlsPanel = new System.Windows.Forms.Panel();
             this.DataTransferStopButton = new System.Windows.Forms.Button();
             this.DataTransferStartButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -45,7 +45,7 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.ControlsPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,8 +54,8 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ChartsPanel, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.ControlsPanel, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -64,24 +64,24 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(471, 300);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // ChartsPanel
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(97, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 294);
-            this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            this.ChartsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ChartsPanel.Location = new System.Drawing.Point(97, 3);
+            this.ChartsPanel.Name = "ChartsPanel";
+            this.ChartsPanel.Size = new System.Drawing.Size(371, 294);
+            this.ChartsPanel.TabIndex = 0;
+            this.ChartsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // panel1
+            // ControlsPanel
             // 
-            this.panel1.Controls.Add(this.DataTransferStopButton);
-            this.panel1.Controls.Add(this.DataTransferStartButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(88, 294);
-            this.panel1.TabIndex = 1;
+            this.ControlsPanel.Controls.Add(this.DataTransferStopButton);
+            this.ControlsPanel.Controls.Add(this.DataTransferStartButton);
+            this.ControlsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ControlsPanel.Location = new System.Drawing.Point(3, 3);
+            this.ControlsPanel.Name = "ControlsPanel";
+            this.ControlsPanel.Size = new System.Drawing.Size(88, 294);
+            this.ControlsPanel.TabIndex = 1;
             // 
             // DataTransferStopButton
             // 
@@ -102,6 +102,7 @@
             this.DataTransferStartButton.TabIndex = 0;
             this.DataTransferStartButton.Text = "Start";
             this.DataTransferStartButton.UseVisualStyleBackColor = true;
+            this.DataTransferStartButton.Click += new System.EventHandler(this.DataTransferStartButton_Click);
             // 
             // menuStrip1
             // 
@@ -133,6 +134,7 @@
             this.newConfigurationToolStripMenuItem.Name = "newConfigurationToolStripMenuItem";
             this.newConfigurationToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.newConfigurationToolStripMenuItem.Text = "New configuration";
+            this.newConfigurationToolStripMenuItem.Click += new System.EventHandler(this.newConfigurationToolStripMenuItem_Click);
             // 
             // cOMToolStripMenuItem
             // 
@@ -198,7 +200,7 @@
             this.Text = "Sampling Station";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.ControlsPanel.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -209,7 +211,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newConfigurationToolStripMenuItem;
@@ -221,9 +222,10 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cOMToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel ControlsPanel;
         private System.Windows.Forms.Button DataTransferStopButton;
         private System.Windows.Forms.Button DataTransferStartButton;
+        private System.Windows.Forms.FlowLayoutPanel ChartsPanel;
     }
 }
 
