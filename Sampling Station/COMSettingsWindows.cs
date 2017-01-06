@@ -76,12 +76,17 @@ namespace Sampling_Station
 
         private void PortNameComboBox_DropDownClosed(object sender, EventArgs e)
         {
-            RefreshCOMComboBox(PortNameComboBox);
+            
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
             COMSettingsWindows.ActiveForm.Close();
+        }
+
+        private void PortNameComboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            RefreshCOMComboBox(PortNameComboBox);
         }
     }
 }

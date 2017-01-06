@@ -90,6 +90,7 @@
             this.PortNameComboBox.TabIndex = 4;
             this.PortNameComboBox.SelectedIndexChanged += new System.EventHandler(this.PortNameComboBox_SelectedIndexChanged);
             this.PortNameComboBox.DropDownClosed += new System.EventHandler(this.PortNameComboBox_DropDownClosed);
+            this.PortNameComboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PortNameComboBox_MouseClick);
             // 
             // PortNameLabel
             // 
@@ -174,7 +175,6 @@
             // 
             this.StopBitsComboBox.FormattingEnabled = true;
             this.StopBitsComboBox.Items.AddRange(new object[] {
-            "None",
             "1",
             "1.5",
             "2"});
@@ -182,7 +182,7 @@
             this.StopBitsComboBox.Name = "StopBitsComboBox";
             this.StopBitsComboBox.Size = new System.Drawing.Size(55, 21);
             this.StopBitsComboBox.TabIndex = 14;
-            this.StopBitsComboBox.Text = "None";
+            this.StopBitsComboBox.Text = "1";
             // 
             // TimeoutLabel
             // 
@@ -199,6 +199,7 @@
             this.TimeoutTextBox.Name = "TimeoutTextBox";
             this.TimeoutTextBox.Size = new System.Drawing.Size(62, 20);
             this.TimeoutTextBox.TabIndex = 16;
+            this.TimeoutTextBox.Text = "10";
             // 
             // ApplyButton
             // 

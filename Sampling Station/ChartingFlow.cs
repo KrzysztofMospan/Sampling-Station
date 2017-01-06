@@ -58,10 +58,19 @@ namespace Sampling_Station
 
         public void UpdateCharts(int packet_number, Dictionary<string, double> values)
         {
-            foreach(Chart chart in charts.Values)
+            foreach(KeyValuePair<string, Chart> chart in charts)
             {
-                chart.Series.First().Points.AddXY(packet_number, values[chart.Titles.First().ToString()]);
+                appendChartFSAddXY(chart.Value, packet_number, values[chart.Key]);
             }
         }
+
+        private void appendChartFSAddXY(Chart chart, int x, double y) // Dispatcher to add a point(X,Y) to any chart and control render window jump
+        {
+            if (chart.InvokeRequired)
+                chart.BeginInvoke(new Action<Chart, int, double>(appendChartFSAddXY), chart, x, y);
+            else
+                chart.Series.First().Points.AddXY(x, y);
+        }
+
     }
 }

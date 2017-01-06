@@ -61,15 +61,15 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(471, 300);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(922, 522);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ChartsPanel
             // 
             this.ChartsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChartsPanel.Location = new System.Drawing.Point(97, 3);
+            this.ChartsPanel.Location = new System.Drawing.Point(187, 3);
             this.ChartsPanel.Name = "ChartsPanel";
-            this.ChartsPanel.Size = new System.Drawing.Size(371, 294);
+            this.ChartsPanel.Size = new System.Drawing.Size(732, 516);
             this.ChartsPanel.TabIndex = 0;
             this.ChartsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -80,7 +80,7 @@
             this.ControlsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ControlsPanel.Location = new System.Drawing.Point(3, 3);
             this.ControlsPanel.Name = "ControlsPanel";
-            this.ControlsPanel.Size = new System.Drawing.Size(88, 294);
+            this.ControlsPanel.Size = new System.Drawing.Size(178, 516);
             this.ControlsPanel.TabIndex = 1;
             // 
             // DataTransferStopButton
@@ -88,17 +88,18 @@
             this.DataTransferStopButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.DataTransferStopButton.Location = new System.Drawing.Point(0, 23);
             this.DataTransferStopButton.Name = "DataTransferStopButton";
-            this.DataTransferStopButton.Size = new System.Drawing.Size(88, 23);
+            this.DataTransferStopButton.Size = new System.Drawing.Size(178, 23);
             this.DataTransferStopButton.TabIndex = 1;
             this.DataTransferStopButton.Text = "Stop";
             this.DataTransferStopButton.UseVisualStyleBackColor = true;
+            this.DataTransferStopButton.Click += new System.EventHandler(this.DataTransferStopButton_Click);
             // 
             // DataTransferStartButton
             // 
             this.DataTransferStartButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.DataTransferStartButton.Location = new System.Drawing.Point(0, 0);
             this.DataTransferStartButton.Name = "DataTransferStartButton";
-            this.DataTransferStartButton.Size = new System.Drawing.Size(88, 23);
+            this.DataTransferStartButton.Size = new System.Drawing.Size(178, 23);
             this.DataTransferStartButton.TabIndex = 0;
             this.DataTransferStartButton.Text = "Start";
             this.DataTransferStartButton.UseVisualStyleBackColor = true;
@@ -112,7 +113,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(471, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(922, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -192,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 324);
+            this.ClientSize = new System.Drawing.Size(922, 546);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

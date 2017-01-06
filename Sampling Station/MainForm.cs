@@ -18,7 +18,8 @@ namespace Sampling_Station
             InitializeComponent();
         }
 
-        //ChartingFlow chartingflow = new ChartingFlow(ChartsPanel);
+        ChartingFlow chartingflow;
+        COM_DataInterface com_datainterface;
 
         public void configured(bool state)
         {
@@ -46,17 +47,26 @@ namespace Sampling_Station
 
         private void cOMToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            chartingflow = new ChartingFlow(ChartsPanel, 300, 300);
+            com_datainterface = new COM_DataInterface(chartingflow);
+            COMSettingsWindows cw = new COMSettingsWindows(com_datainterface);
+            cw.Show();
         }
 
         private void DataTransferStartButton_Click(object sender, EventArgs e)
         {
-
+            chartingflow.CreateCharts(com_datainterface.getSlicedMask());
+            com_datainterface.SerialStart();
         }
 
         private void newConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DataTransferStopButton_Click(object sender, EventArgs e)
+        {
+            com_datainterface.SerialStop();
         }
     }
 }
