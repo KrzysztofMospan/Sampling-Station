@@ -11,11 +11,13 @@ using System.IO.Ports;
 
 namespace Sampling_Station
 {
-    public partial class COMSettingsWindows : Form
+    public partial class COMSettingsForm : Form
     {
         COM_DataInterface datainterface;
-        public COMSettingsWindows(COM_DataInterface comdi)
+        MainForm mainform;
+        public COMSettingsForm(MainForm mf ,COM_DataInterface comdi)
         {
+            mainform = mf;
             datainterface = comdi;
             InitializeComponent();
             RefreshCOMComboBox(PortNameComboBox);
@@ -58,15 +60,15 @@ namespace Sampling_Station
             try
             {
                 datainterface.SetSeparator(Char.Parse(SeparatorTextBox.Text));
+                datainterface.Slice_Mask(InputMaskTextBox.Text);
+
+                COMSettingsForm.ActiveForm.Close();
+                mainform.configured(true);
             }
             catch (Exception exp)
             {
                 MessageBox.Show(exp.ToString(), "Error parsing separator!");
             }
-
-            datainterface.Slice_Mask(InputMaskTextBox.Text);
-            
-            COMSettingsWindows.ActiveForm.Close();
         }
 
         private void PortNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,7 +83,7 @@ namespace Sampling_Station
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            COMSettingsWindows.ActiveForm.Close();
+            COMSettingsForm.ActiveForm.Close();
         }
 
         private void PortNameComboBox_MouseClick(object sender, MouseEventArgs e)

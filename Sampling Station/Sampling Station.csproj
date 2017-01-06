@@ -47,12 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChartingFlow.cs" />
-    <Compile Include="COMSettingsWindows.cs">
+    <Compile Include="ChangeSizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="COMSettingsWindows.Designer.cs">
-      <DependentUpon>COMSettingsWindows.cs</DependentUpon>
+    <Compile Include="ChangeSizeForm.Designer.cs">
+      <DependentUpon>ChangeSizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChartingFlow.cs" />
+    <Compile Include="COMSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COMSettingsForm.Designer.cs">
+      <DependentUpon>COMSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="COM_DataInterface.cs" />
     <Compile Include="DataProcessing.cs" />
@@ -64,8 +70,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="COMSettingsWindows.resx">
-      <DependentUpon>COMSettingsWindows.cs</DependentUpon>
+    <EmbeddedResource Include="ChangeSizeForm.resx">
+      <DependentUpon>ChangeSizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COMSettingsForm.resx">
+      <DependentUpon>COMSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

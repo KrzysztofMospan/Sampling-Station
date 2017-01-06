@@ -44,6 +44,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.ControlsPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -86,6 +87,7 @@
             // DataTransferStopButton
             // 
             this.DataTransferStopButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DataTransferStopButton.Enabled = false;
             this.DataTransferStopButton.Location = new System.Drawing.Point(0, 23);
             this.DataTransferStopButton.Name = "DataTransferStopButton";
             this.DataTransferStopButton.Size = new System.Drawing.Size(178, 23);
@@ -97,6 +99,7 @@
             // DataTransferStartButton
             // 
             this.DataTransferStartButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DataTransferStartButton.Enabled = false;
             this.DataTransferStartButton.Location = new System.Drawing.Point(0, 0);
             this.DataTransferStartButton.Name = "DataTransferStartButton";
             this.DataTransferStartButton.Size = new System.Drawing.Size(178, 23);
@@ -179,6 +182,8 @@
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chartsToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -188,6 +193,12 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // chartsToolStripMenuItem
+            // 
+            this.chartsToolStripMenuItem.Name = "chartsToolStripMenuItem";
+            this.chartsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chartsToolStripMenuItem.Text = "Charts";
             // 
             // MainForm
             // 
@@ -227,6 +238,7 @@
         private System.Windows.Forms.Button DataTransferStopButton;
         private System.Windows.Forms.Button DataTransferStartButton;
         private System.Windows.Forms.FlowLayoutPanel ChartsPanel;
+        private System.Windows.Forms.ToolStripMenuItem chartsToolStripMenuItem;
     }
 }
 

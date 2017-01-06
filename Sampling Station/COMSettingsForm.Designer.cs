@@ -1,6 +1,6 @@
 ﻿namespace Sampling_Station
 {
-    partial class COMSettingsWindows
+    partial class COMSettingsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -199,7 +199,7 @@
             this.TimeoutTextBox.Name = "TimeoutTextBox";
             this.TimeoutTextBox.Size = new System.Drawing.Size(62, 20);
             this.TimeoutTextBox.TabIndex = 16;
-            this.TimeoutTextBox.Text = "10";
+            this.TimeoutTextBox.Text = "0";
             // 
             // ApplyButton
             // 
@@ -227,7 +227,6 @@
             this.AcceptButton = this.ApplyButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.CancelButton;
             this.ClientSize = new System.Drawing.Size(379, 113);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.ApplyButton);

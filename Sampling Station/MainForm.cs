@@ -26,12 +26,14 @@ namespace Sampling_Station
             if (state)
             {
                 DataTransferStartButton.Enabled = true;
-                DataTransferStopButton.Enabled = true;
+                //DataTransferStopButton.Enabled = true;
+                ChangeChartsSizeButton.Enabled = true;
             }
             else
             {
                 DataTransferStartButton.Enabled = false;
-                DataTransferStopButton.Enabled = false;
+                //DataTransferStopButton.Enabled = false;
+                ChangeChartsSizeButton.Enabled = false;
             }
         }
 
@@ -49,14 +51,18 @@ namespace Sampling_Station
         {
             chartingflow = new ChartingFlow(ChartsPanel, 300, 300);
             com_datainterface = new COM_DataInterface(chartingflow);
-            COMSettingsWindows cw = new COMSettingsWindows(com_datainterface);
+            COMSettingsForm cw = new COMSettingsForm(this, com_datainterface);
+            if (chartingflow.GetAreChartsCreated()) chartingflow.SetAreChartsCreated(false);
             cw.Show();
         }
 
         private void DataTransferStartButton_Click(object sender, EventArgs e)
         {
-            chartingflow.CreateCharts(com_datainterface.getSlicedMask());
+            if (!chartingflow.GetAreChartsCreated()) chartingflow.CreateCharts(com_datainterface.getSlicedMask());
+            else chartingflow.ClearChartsPoints();
             com_datainterface.SerialStart();
+            DataTransferStartButton.Enabled = false;
+            DataTransferStopButton.Enabled = true;
         }
 
         private void newConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,6 +73,13 @@ namespace Sampling_Station
         private void DataTransferStopButton_Click(object sender, EventArgs e)
         {
             com_datainterface.SerialStop();
+            DataTransferStopButton.Enabled = false;
+            DataTransferStartButton.Enabled = true;
+        }
+
+        private void ChangeChartsSizeButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

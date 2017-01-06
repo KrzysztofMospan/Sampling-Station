@@ -60,10 +60,13 @@ namespace Sampling_Station
         public Dictionary<string, double> GroupToUpdate(List<double> value)
         {
             Dictionary<string, double> output = new Dictionary<string, double>();
-            foreach(string title in input_smask)
+            foreach (string title in input_smask)
             {
-                output.Add(title, value[0]);
-                value.RemoveAt(0);
+                if (value.Count > 0)
+                {
+                    output.Add(title, value[0]);
+                    value.RemoveAt(0);
+                }
             }
             return output;
         }

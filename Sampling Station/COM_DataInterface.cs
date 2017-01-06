@@ -44,6 +44,11 @@ namespace Sampling_Station
             packet_number++;
         }
 
+        public bool GetIsSerialOpen()
+        {
+            return sp.IsOpen;
+        }
+
         public void SerialSetUp(int baud_rate, string port_name, Parity parity, StopBits stopbits, bool rts, bool dtr, int time_out)
         {
             sp.BaudRate = baud_rate;
@@ -52,7 +57,8 @@ namespace Sampling_Station
             sp.StopBits = stopbits;
             sp.RtsEnable = rts;
             sp.DtrEnable = dtr;
-            sp.ReadTimeout = time_out;
+            if (time_out >= 0) sp.ReadTimeout = SerialPort.InfiniteTimeout;
+            else sp.ReadTimeout = time_out;
         }
 
         public void SerialStart()

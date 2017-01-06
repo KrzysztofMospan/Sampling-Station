@@ -13,6 +13,8 @@ namespace Sampling_Station
         FlowLayoutPanel panel;
         Dictionary<string, Chart> charts = new Dictionary<string, Chart>();
 
+        private bool areChartsCreated = false;
+
         private int chartHeight, chartWidth;
 
         public ChartingFlow(FlowLayoutPanel flowlayoutpanel, int Height=100, int Width=100)
@@ -29,6 +31,9 @@ namespace Sampling_Station
 
         public void CreateCharts(string[] input_smask)
         {
+            if (panel.Controls.Count > 0) panel.Controls.Clear();
+            if (charts.Count > 0) charts.Clear();
+
             foreach(string title in input_smask)
             {
                 Chart chart = new Chart();
@@ -54,17 +59,76 @@ namespace Sampling_Station
 
                 charts.Add(title, chart);
             }
+            areChartsCreated = true;
+        }
+
+        public Dictionary<string, Chart> GetChartsDictionary()
+        {
+            return charts;
+        }
+
+        public bool GetAreChartsCreated()
+        {
+            return areChartsCreated;
+        }
+        
+        public void SetAreChartsCreated(bool state)
+        {
+            areChartsCreated = state;
+        }
+
+        public void ClearChartsPoints()
+        {
+            foreach(Chart chart in charts.Values)
+            {
+                appendChartsPointsClear(chart);
+            }
+        }
+
+        private void appendChartsPointsClear(Chart chart)
+        {
+            if (chart.InvokeRequired)
+                chart.BeginInvoke(new Action<Chart, int, double>(appendChartFSAddXY), chart);
+            else
+                chart.Series.First().Points.Clear();
+        }
+
+        public void SetChartsTitles(bool enabled)
+        {
+            foreach (Chart chart in charts.Values)
+            {
+                chart.Titles.First().Visible = enabled;
+            }
+        }
+
+        public void ChangeChartsSize(int height, int width)
+        {
+            chartHeight = height;
+            chartWidth = width;
+
+            foreach(Chart chart in charts.Values)
+            {
+                chart.Height = chartHeight;
+                chart.Width = chartWidth;
+            }
         }
 
         public void UpdateCharts(int packet_number, Dictionary<string, double> values)
         {
             foreach(KeyValuePair<string, Chart> chart in charts)
             {
-                appendChartFSAddXY(chart.Value, packet_number, values[chart.Key]);
-            }
+                try
+                {
+                    appendChartFSAddXY(chart.Value, packet_number, values[chart.Key]);
+                }
+                catch
+                {
+
+                }
+                }
         }
 
-        private void appendChartFSAddXY(Chart chart, int x, double y) // Dispatcher to add a point(X,Y) to any chart and control render window jump
+        private void appendChartFSAddXY(Chart chart, int x, double y)
         {
             if (chart.InvokeRequired)
                 chart.BeginInvoke(new Action<Chart, int, double>(appendChartFSAddXY), chart, x, y);
